@@ -1,0 +1,14 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+include components/menu
+
++doctype(pages.index.title)
+  .-wrapper
+    +header
+    +content
+      | Hui
+    +footer

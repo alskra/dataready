@@ -1,0 +1,23 @@
+-
+  var menuList = [
+    {title: 'Студия', url: pages.index.url, submenu: [
+        {title: 'Кто мы', url: pages.index.url}
+      ]
+    }
+  ];
+
+mixin menu(menuList, url)
+  nav.-menu&attributes(attributes)
+    each item in menuList
+      .__item._lvl_1(class={_submenu: item.submenu} class={_current: item.url === url[0]})
+        a.__btn._lvl_1(href= item.url)
+          span.__label._lvl_1= item.title
+          span.__icon._lvl_1
+        if item.submenu
+          .__submenu._lvl_1
+            .container-fluid
+              each itemInner in item.submenu
+                .-menu.__item._lvl_2(class={_submenu: itemInner.submenu} class={_current: itemInner.url === url[1]})
+                  a.__btn._lvl_2(href= itemInner.url)
+                    span.__label._lvl_2= itemInner.title
+                    span.__icon._lvl_2
