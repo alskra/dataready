@@ -39,53 +39,82 @@ global.depsArr = [];
 
 const pkgData = './package.json';
 const depsData = './deps.json';
+const FAVICON_DATA_FILE = './src/faviconData.json';
 
-// File where the favicon markups are stored
-const faviconData = './src/favicon/faviconData.json';
-
-// Generate the icons. This task takes a few seconds to complete.
-// You should run it at least once to create the icons. Then,
-// you should run it whenever RealFaviconGenerator updates its
-// package (see the check-for-favicon-update task below).
-gulp.task('favicon', function(done) {
+gulp.task('generate-favicon', function(done) {
     realFavicon.generateFavicon({
-        masterPicture: 'src/favicon/favicon.svg',
-        dest: 'public/favicon/',
-        iconsPath: 'favicon/',
+        masterPicture: './src/favicon.png',
+        dest: './public/',
+        iconsPath: '/',
         design: {
             ios: {
                 pictureAspect: 'backgroundAndMargin',
-                backgroundColor: '#295786',
-                margin: '21%'
+                backgroundColor: '#1d1c2a',
+                margin: '21%',
+                assets: {
+                    ios6AndPriorIcons: false,
+                    ios7AndLaterIcons: false,
+                    precomposedIcons: false,
+                    declareOnlyDefaultIcon: true
+                }
             },
             desktopBrowser: {},
             windows: {
                 pictureAspect: 'whiteSilhouette',
-                backgroundColor: '#295786',
-                onConflict: 'override'
+                backgroundColor: '#1d1c2a',
+                onConflict: 'override',
+                assets: {
+                    windows80Ie10Tile: false,
+                    windows10Ie11EdgeTiles: {
+                        small: false,
+                        medium: true,
+                        big: false,
+                        rectangle: false
+                    }
+                }
             },
             androidChrome: {
-                pictureAspect: 'shadow',
-                themeColor: '#295786',
+                pictureAspect: 'backgroundAndMargin',
+                margin: '17%',
+                backgroundColor: '#1d1c2a',
+                themeColor: '#1d1c2a',
                 manifest: {
-                    name: 'Magwai',
-                    display: 'browser',
+                    name: 'DataReady',
+                    display: 'standalone',
                     orientation: 'notSet',
-                    onConflict: 'override'
+                    onConflict: 'override',
+                    declared: true
+                },
+                assets: {
+                    legacyIcon: false,
+                    lowResolutionIcons: false
                 }
             },
             safariPinnedTab: {
                 pictureAspect: 'silhouette',
-                themeColor: '#12aaeb'
+                themeColor: '#1d1c2a'
             }
         },
         settings: {
-            compression: 5,
             scalingAlgorithm: 'Mitchell',
             errorOnImageTooSmall: false
         },
-        markupFile: faviconData
+        markupFile: FAVICON_DATA_FILE
     }, function() {
+        done();
+    });
+});
+
+// Check for updates on RealFaviconGenerator (think: Apple has just
+// released a new Touch icon along with the latest version of iOS).
+// Run this task from time to time. Ideally, make it part of your
+// continuous integration system.
+gulp.task('check-for-favicon-update', function(done) {
+    var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+    realFavicon.checkForUpdates(currentVersion, function(err) {
+        if (err) {
+            throw err;
+        }
         done();
     });
 });
@@ -133,7 +162,7 @@ gulp.task('html', gulp.series(function() {
             pretty: true,
             locals: {
                 pkg: JSON.parse(fs.readFileSync(pkgData)),
-                faviconCode: JSON.parse(fs.readFileSync(faviconData)).favicon.html_code
+                faviconCode: JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code
             }
         }),
         posthtml([
@@ -340,7 +369,7 @@ gulp.task('clean', function() {
     return del(['public/', 'dist/']);
 });
 
-gulp.task('build', gulp.series('clean', 'favicon',
+gulp.task('build', gulp.series('clean', 'generate-favicon',
 gulp.parallel('html', 'fonts', 'fontawesome', 'glyphicons', 'files'), 'img', gulp.parallel('css', 'js')));
 
 gulp.task('watch', function() {

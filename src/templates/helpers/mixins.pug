@@ -1,7 +1,5 @@
 mixin resetCase(str)
-  = str[0].toUpperCase() + str.slice(1)
-
-- function resetCase(str) {return str[0].toUpperCase() + str.slice(1)}
+  = str[0].toUpperCase() + str.slice(1).toLowerCase()
 
 mixin a(href)
   a(href= href || voidHref)&attributes(attributes)

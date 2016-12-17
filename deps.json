@@ -27,7 +27,7 @@
     "css": "./src/fonts/font-awesome/font-awesome.css"
   },
   "fonts": {
-    "css": ["./src/fonts/zero-width/zero-width.css", "./src/fonts/MuseoSansCyrl/MuseoSansCyrl.css"]
+    "css": ["./src/fonts/zero-width/zero-width.css", "./src/fonts/OpenSans/OpenSans.css"]
   },
   "goodshare": {
     "js": "./app_components/goodshare/goodshare.min.js"
@@ -67,5 +67,5 @@
     "ikSelect"
   ],
 
-  "levels": ["./src/_common.blocks"]
+  "levels": ["./src/_common.blocks/"]
 }
