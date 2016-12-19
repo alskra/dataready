@@ -1,147 +1,98 @@
 .menu
   position fixed
-  background-color #295786
-  font-weight 900
-  color white
-  font-size 13px
-  line-height 1.2em
-  text-transform uppercase
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background $blue-1
+  padding 25px 20px
+  z-index $zindex-navbar-fixed
   display none
-  &__item
-    &_lvl_1
-      border-bottom 1px solid #3f6892
-    &_lvl_2
-      border-top 1px solid #3f6892
-    &_submenu
-      &>{$p}__btn
-        &>{$p}__icon
-          &:before, &:after
-            width 18px
-            border-radius 1px
-            transform-origin 50% 50%
-          &:before
-            margin-bottom -2px
-            transform rotate(0deg)
-          &:after
-            transform rotate(90deg)
-    &_opened
-      &>{$p}__btn
-        &>{$p}__icon
-          &:after
-            width 0
-    &_current
-      &>{$p}__btn
-        box-shadow inset 4px 0 $blue-1
-  &__btn
+  .social
+    &__item
+      margin-left 13px
+      margin-right 13px
+      font-size 24px
+      &:hover, &:focus
+        color white
+  &__inner
     display flex
+    flex-flow column
+    height 100%
+  &__header
+    flex none
+    display flex
+    justify-content flex-end
     align-items center
-    height 54px
+    min-height 33px
+    margin-bottom 30px
+  &__content
+    flex 1 1 auto
+    overflow-y auto
+    display flex
+  &__footer
+    flex none
+    margin-top 30px
+  &__inner-2
+    display flex
+    flex-flow column
+    margin auto 0
+    width 100%
+  &__item
+    text-align center
+    margin 13px 0
+  &__btn
     color white
-    background-color #295786
     text-decoration none !important
-    cursor pointer
-    transition 0.15s
+    display block
+    font-size 18px
+    line-height 1.25em
+    font-weight 700
+    text-transform uppercase
     &:hover, &:focus
       color white
-    &:active
-      color white
-      background-color #6587a8
-      transition none
-    &_lvl_2
-      color #5682b2
-      background-color #1c446c
-      &:hover, &:focus
-        color #5682b2
-      &:active
-        color white
   &__label
-    flex 1 1 auto
-    padding 0 15px
+    display block
     overflow hidden
     white-space nowrap
     text-overflow ellipsis
-  &__icon
-    flex 0 0 58px
-    align-self stretch
-    display flex
-    flex-flow column
-    justify-content center
-    align-items center
-    position relative
-    transition 0.15s
-    &:before, &:after
-      content ''
-      width 12px
-      height 2px
-      background #fff
-      border-radius 1px 0 0 1px
-      transform-origin 100% 50%
-      transition inherit
-    &:before
-      margin-bottom -3px
-      transform rotate(45deg)
-    &:after
-      transform rotate(-45deg)
-  &__submenu
-    background-color #1c446c
-    display none
-    .container-fluid
-      padding 0
 
+  @media (min-width $screen-sm-min)
+    left auto
+    right 0
+    width percentage(340/$screen-sm-min)
+    padding 50px percentage(102/$screen-sm-min) 50px 60px
+    .social
+      justify-content flex-start
+      margin-left -10px
+      &__item
+        margin-left 10px
+        margin-right 10px
+        font-size 18px
+    &__header
+      min-height 39px
+    &__item
+      text-align left
+      margin 16px 0
+    &__btn
+      font-size 14px
 
   @media (min-width $screen-md-min)
-    position static
-    display flex
+    display block !important
+    position relative
+    right auto
+    width auto
+    padding 0
+    background none
+    &__content
+      padding 0
+      overflow-y visible
+    &__inner-2
+      flex-flow row
+      justify-content flex-start
+      width auto
     &__item
-      &_lvl_1
-        border-bottom 0
-      &_lvl_2
-        border-top 0
-      &_opened
-        &>{$p}__btn
-          color white !important
-          box-shadow inset 0 -4px $blue-1
-          position relative
-          z-index 2
-          &:before
-            opacity 1
-      &_current
-        &>{$p}__btn
-          color white !important
-          box-shadow inset 0 -4px $blue-1
+      margin 0 0 0 30px
     &__btn
-      color #5682b2
       &:hover, &:focus
-        color #5682b2
-        box-shadow inset 0 -4px $blue-1
-      &:active
-        color white
-      &:before
-        content ''
-        position absolute
-        top 100%
-        left 50%
-        border-top 7px solid $blue-1
-        border-left 6px solid transparent
-        border-right 6px solid transparent
-        margin 0 -6px
-        opacity 0
-        transition inherit
-    &__icon
-      display none
-    &__submenu
-      position absolute
-      top 54px
-      left 0
-      width 100%
-      &:before
-        content ''
-        position absolute
-        top 0
-        left 0
-        width 100%
-        height 100%
-        pointer-events none
-        box-shadow inset 0 13px 10px -10px rgba(black, 0.2)
-      .container-fluid
-        display flex
+        color $blue-1

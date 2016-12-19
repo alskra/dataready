@@ -43,7 +43,7 @@ const FAVICON_DATA_FILE = './src/faviconData.json';
 
 gulp.task('generate-favicon', function(done) {
     realFavicon.generateFavicon({
-        masterPicture: './src/favicon.png',
+        masterPicture: './src/favicon.svg',
         dest: './public/',
         iconsPath: '/',
         design: {
@@ -200,7 +200,7 @@ gulp.task('css', function() {
         stylus({
             'include css': true,
             use: [autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
+                browsers: ['last 2 versions', 'ie >= 11'],
                 cascade: false
             })]
         }),
@@ -260,7 +260,7 @@ gulp.task('js', gulp.series('js:components', 'js:main'));
 
 gulp.task('img', function() {
     return combiner(
-        gulp.src(depsArr.map(function (dep) {return path.join(dep, '**/*.{png,jp?g,gif,svg}');})),
+        gulp.src(depsArr.map(function (dep) {return path.join(dep, '**/*.{png,jpg,gif,svg}');})),
         rename(function (path) {
             path.base = path.dirname
         }),
@@ -386,7 +386,7 @@ gulp.task('watch', function() {
         });
     gulp.watch(['src/**/*.{css,styl}', 'app_components/**/*.{css,styl}'], gulp.series('css'));
     gulp.watch(['src/**/*.js', 'app_components/**/*.js'], gulp.series('js'));
-    gulp.watch(JSON.parse(fs.readFileSync(depsData)).levels.map(function (dep) {return path.join(dep, '**/*.{png,jp?g,gif,svg}');}), gulp.series('img'));
+    gulp.watch(JSON.parse(fs.readFileSync(depsData)).levels.map(function (dep) {return path.join(dep, '**/*.{png,jpg,gif,svg}');}), gulp.series('img'));
     gulp.watch(['src/fonts/**/*.{woff2,woff,ttf,eot,svg}', '!src/fonts/glyphicons/**/*.*'], gulp.series('fonts'));
     gulp.watch('src/fonts/glyphicons/icons/*.svg', gulp.series('glyphicons'));
     gulp.watch('src/files/**/*.*', gulp.series('files'));

@@ -6,8 +6,70 @@ include components/content
 include components/footer
 include components/menu
 
+include components/social
+
 +doctype(pages.index.title)
   .-wrapper
-    +header
-    +content
-    +footer
+    section.-section._main
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              +a(pages.index.url).-logo
+                +img('img/logo.svg', pkg.name).__img
+            .__col_2.menu-wrap
+              +menu(menuList, ['#main'])
+            .__col_3.hidden-xs
+              +a('popups/feedback').-btn._type_1(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 5000})
+          .slick-slide
+            .container-fluid
+              .-main-slider.__col._1
+                .__header Раскройте весь потенциал
+                h2.__title.dot-ellipsis.dot-timer-update Virtual Machines
+                .__caption.dot-ellipsis.dot-timer-update.
+                  Создавайте виртуальные машины за считаные минуты.
+                  Выберите наши образы или образы, предоставляемые партнерами и сообществом.
+                +a.__more.btn.btn_type_3 #[span.__label Подробнее]
+              .-main-slider.__col._2
+                .__decoration
+                +img('files/pics/slide1.png', 'Virtual Machines').__img
+          .slick-slide
+            .container-fluid
+              .-main-slider.__col._1
+                .__header Раскройте весь потенциал
+                h2.__title.dot-ellipsis.dot-timer-update Vigilsperegrinatione! Burguss tolerare!
+                .__caption.dot-ellipsis.dot-timer-update.
+                  Sunt competitiones attrahendam emeritis, clemens sensoremes.
+                  Festus, grandis detriuss callide perdere de barbatus, audax vita.
+                  Sunt competitiones attrahendam emeritis, clemens sensoremes.
+                  Festus, grandis detriuss callide perdere de barbatus, audax vita.
+                +a.__more.btn.btn_type_3 #[span.__label Подробнее]
+              .-main-slider.__col._2
+                .__decoration
+                +img('files/pics/slide2.png', 'Virtual Machines').__img
+
+
+      .-footer-section
+        .-decoration
+          .__line
+        .container-fluid
+          .text-center.hidden-sm.hidden-md.hidden-lg
+            +a('popups/feedback').-btn._type_2(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+          .row.hidden-xs
+            .col-sm-4
+              +a().-link._type_1 Личный кабинет
+            .col-sm-4.text-center
+              .icon.icon-mouse
+            .col-sm-4
+              +social
+    section.-section._services_1
+    section.-section._services_2
+    section.-section._gallery
+    section.-section._contacts

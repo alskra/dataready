@@ -1,10 +1,13 @@
 .logo
   color white !important
   text-decoration none !important
-  display flex
-  align-items center
-  padding 0 15px 2px 40px
-  background inline-image('logo.svg') no-repeat 0 50%/30px auto
-  font-size 19px
-  font-weight 500
+  display inline-block
+  vertical-align top
+  height 33px
   white-space nowrap
+  margin 0 15px 0 0
+  &__img
+    height 100%
+
+  @media (min-width $screen-sm-min)
+    height 39px

@@ -1,12 +1,33 @@
 .wrapper
-  display flex
-  flex-flow column
-  min-height 100vh
   position relative
-  overflow hidden
-  background white
-  box-shadow -2px 0 8px rgba(black, 0.3)
+  background $body-bg
   will-change auto
 
+.onepage-pagination
+  display none
+  @media (min-width $screen-sm-min)
+    display block
+    right auto
+    left percentage(102/$screen-sm-min/2)
+    top 0
+    height 100%
+    display flex
+    flex-flow column
+    margin-left -7px
+    justify-content center
+    li
+      margin 5px 0
+      a
+        square 14px
+        border 3px solid transparent
+        border-radius 50%
+        background-clip content-box
+        background-color $blue-1
+        padding 0
+        &:before
+          content normal
+        &.active
+          border-color white
+          background-color transparent
   @media (min-width $screen-md-min)
-    box-shadow none
+    left percentage(215/$screen-md-min/2)

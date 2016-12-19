@@ -27,7 +27,7 @@
     "css": "./src/fonts/font-awesome/font-awesome.css"
   },
   "fonts": {
-    "css": ["./src/fonts/zero-width/zero-width.css", "./src/fonts/OpenSans/OpenSans.css"]
+    "css": ["./src/fonts/zero-width/zero-width.css"]
   },
   "goodshare": {
     "js": "./app_components/goodshare/goodshare.min.js"
@@ -36,12 +36,16 @@
     "css": "./app_components/jquery.arcticmodal/jquery.arcticmodal-0.3.styl",
     "js": "./app_components/jquery.arcticmodal/jquery.arcticmodal-0.3.min.js"
   },
-  "ikSelect": {
+  "jquery.ikSelect": {
     "js": "./app_components/jquery.ikSelect/jquery.ikSelect.min.js"
+  },
+  "jquery.onepage-scroll": {
+    "css": "./app_components/jquery.onepage-scroll/onepage-scroll.css",
+    "js": "./app_components/jquery.onepage-scroll/jquery.onepage-scroll.min.js"
   },
   "bootstrap": {
     "css": "./app_components/bootstrap/css/index.styl",
-    "js": ["./app_components/bootstrap/js/transition.js", "./app_components/bootstrap/js/dropdown.js", "./app_components/bootstrap/js/tooltip.js"]
+    "js": "./app_components/bootstrap/js/{transition,dropdown,tooltip}.js"
   },
 
   "css": [
@@ -52,7 +56,8 @@
     "img-object-fit",
     "slick-carousel",
     "perfect-scrollbar",
-    "jquery.arcticmodal"
+    "jquery.arcticmodal",
+    "jquery.onepage-scroll"
   ],
   "js": [
     "modernizr",
@@ -64,7 +69,8 @@
     "perfect-scrollbar",
     "goodshare",
     "jquery.arcticmodal",
-    "ikSelect"
+    "jquery.ikSelect",
+    "jquery.onepage-scroll"
   ],
 
   "levels": ["./src/_common.blocks/"]

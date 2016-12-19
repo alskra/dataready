@@ -2,30 +2,28 @@
   padding 0
   border 0
   background none
-  width 58px
-  flex none
-  border-right 1px solid rgba(white, 0.1)
-  transition 0.15s
+  width 26px
+  height 26px
+  font-size 24px
+  line-height 1
+  color white
+  position relative
+  z-index $zindex-navbar-fixed
+  transition 0.3s
   &:active
-    background-color #6587a8
     transition none
   &__line
-    display block
-    size 18px 2px
+    size 26px 2px
     background white
-    margin 4px auto
-    border-radius 1px
-    transition 0.3s ease
+    transition inherit
     transform-origin 50% 50%
+    display block
+    margin 0 auto
+    &+&
+      margin-top 8px
   &:focus
     outline none
   &_opened
+    justify-content center
     &>{$p}__line
-      width 22px
-      &:nth-child(1)
-        transform rotate(45deg)
-      &:nth-child(2)
-        opacity 0
-        margin -6px auto
-      &:nth-child(3)
-        transform rotate(-45deg)
+      display none

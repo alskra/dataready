@@ -1,4 +1,7 @@
 mixin header()
   // Header
   header.-header&attributes(attributes)
+    .container-fluid
+      +a(pages.index.url).-logo
+        +img('img/logo.png', pkg.name).__img
   // /Header

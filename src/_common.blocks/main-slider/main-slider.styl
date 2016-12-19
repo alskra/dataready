@@ -1,0 +1,177 @@
+.main-slider
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  overflow hidden
+  p
+    margin 0
+  .slick-list, .slick-track, .slick-slide
+    height 100%
+  .container-fluid
+    height 100%
+    display flex
+    flex-flow column
+  .slick-slide
+    padding 83px 0 0
+  .slick-arrow
+    position absolute
+    font-size 20px
+    line-height 1
+    bottom 115px
+    z-index 10
+    color white
+    transition 0.15s
+    width 16px
+    height 3px
+    background white
+    &:before, &:after
+      content ''
+      position absolute
+      border-top 4px solid transparent
+      border-bottom 4px solid transparent
+      top 1px
+      height 9px
+      margin -4px 0
+    &:before
+      border-right 6px solid
+      left -6px
+    &:after
+      border-left 6px solid
+      right -6px
+    &:hover
+      width 26px
+  .slick-prev
+    right 50%
+  .slick-next
+    left 50%
+  &__header
+    font-weight 600
+    padding 14px 22px 0 22px
+    position relative
+    color white
+    margin-bottom 10px
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+    &:before
+      content ''
+      position absolute
+      top 0
+      left 0
+      size 36px 34px
+      border-top 4px solid #04b6f5
+      border-left 4px solid #04b6f5
+  &__title
+    font-size 45px
+    line-height 1.25em
+    overflow hidden
+    max-height 2.5em
+    padding 0 22px
+    margin 0 0 25px
+  &__caption
+    display none
+    overflow hidden
+    line-height ($line-height-base)em
+    max-height $line-height-base*3em
+    font-weight 300
+  &__col
+    position relative
+    &_1
+      z-index 2
+    &_2
+      flex 1 1 auto
+      margin 0 0 25px
+  &__img
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    margin auto
+    max-width 100%
+    max-height 100%
+    z-index 1
+  &__decoration
+    position absolute
+    width 140%
+    padding-top 140%
+    margin -70%
+    top 50%
+    left 50%
+    pointer-events none
+    &:before, &:after
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      size 100% 100%
+      margin -50%
+      border 1px solid rgba(white, 0.1)
+      border-radius 50%
+    &:after
+      size 70% 70%
+      margin -35%
+  &__more
+    display none
+
+  @media (max-width $screen-sm-min - 1) and (orientation landscape)
+    .container-fluid
+      flex-flow row
+    &__col
+      &_1
+        width 60%
+        margin auto 0
+      &_2
+        width 40%
+        margin-left 15px
+
+
+  @media (min-width $screen-sm-min)
+    .container-fluid
+      flex-flow row
+    .slick-slide
+      padding 139px 0 118px
+    .slick-arrow
+      bottom percentage(215/768)
+    &__col
+      &_1
+        width 60%
+        margin auto 15px auto 0
+      &_2
+        width 40%
+        margin 0 0 0 15px
+    &__header
+      font-size 18px
+      padding 22px 30px 0 30px
+      margin-bottom 25px
+      &:before
+        size 47px 45px
+    &__title
+      padding 0
+      font-size 50px
+      max-height 1.25em
+      margin-bottom 30px
+    &__caption
+      display block
+      margin-bottom 40px
+      max-height $line-height-base*2em
+    &__more
+      display inline-flex
+
+  @media (min-width $screen-md-min)
+    .slick-arrow
+      //bottom percentage(215/768)
+    &__col
+      width 50%
+    &__title
+      font-size 60px
+      //margin-bottom 45px
+    &__caption
+      font-size 16px
+      //margin-bottom 55px
+    &__decoration
+      width 100%
+      padding-top 100%
+      margin -50%
