@@ -1,0 +1,84 @@
+.contacts-data
+  height 100%
+  font-size 13px
+  display flex
+  flex-flow column
+  a
+    color white
+    &:hover, &:focus
+      color $blue-1
+      text-decoration none
+  .link
+    color $blue-1
+    &:hover, &:focus
+      color $link-hover-color
+  .social
+    margin-right -10px
+    justify-content flex-end
+  &__header
+    padding-bottom 25px
+    flex none
+    color white
+  &__content
+    flex 0 1 100%
+    overflow hidden
+    font-weight 300
+  &__footer
+    flex none
+    position relative
+    padding 20px 20px 20px 0
+    color white
+    &:before
+      content ''
+      position absolute
+      bottom 0
+      right 0
+      size 36px 34px
+      border-right 4px solid #04b6f5
+      border-bottom 4px solid #04b6f5
+    .row
+      display flex
+      align-items center
+  &__title
+    font-size 45px
+    font-weight 800
+    line-height (50/45)
+    margin 0
+  &__subtitle
+    font-size 18px
+    font-weight 600
+    margin-bottom 20px
+  &__row
+    margin-bottom 5px
+    &_flex
+      display flex
+      padding-right 10px
+      align-items center
+      .decoration
+        flex 1 1 auto
+        overflow hidden
+        margin 0 10px
+
+  @media (min-width $screen-sm-min)
+    font-size 15px
+    float right
+    width percentage(420/820)
+    max-height 100%
+    height auto
+    &__title
+      font-size 50px
+    &__footer
+      &:before
+        size 47px 45px
+
+  @media (min-width $screen-md-min)
+    width percentage(670/1170)
+    font-size 16px
+    &__header
+      padding-bottom 50px
+    &__title
+      font-size 60px
+    &__row
+      margin-bottom 0
+    &__tel
+      font-size 18px

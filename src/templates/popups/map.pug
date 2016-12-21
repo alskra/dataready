@@ -1,0 +1,36 @@
+form(action='').-modal._map
+  button.__btn-close.btn.arcticmodal-close.icon.icon-close
+  .-contacts-map
+  script.
+      function initialize(mapId, coords) {
+          var mapOptions = {
+              center: new google.maps.LatLng(coords[0], coords[1]),
+              zoom: 15,
+              zoomControl: true,
+              scrollwheel: false,
+              streetViewControl: false,
+              overviewMapControl: false,
+              panControl: false,
+              mapTypeControl: false,
+              draggable: true,
+              styles: []
+          };
+          var map = new google.maps.Map(document.querySelector(mapId), mapOptions);
+          var image = new google.maps.MarkerImage('img/marker.png',
+              null,
+              new google.maps.Point(0, 0),
+              new google.maps.Point(20, 56)
+          );
+          var marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(coords[0], coords[1]),
+              title: 'DataReady'//,
+              //icon: image
+          });
+      }
+
+      $(function () {
+          if ($('.contacts-map').length) {
+              initialize('.contacts-map', [55.672609, 37.625236])
+          }
+      });

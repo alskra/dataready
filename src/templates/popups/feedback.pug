@@ -1,0 +1,21 @@
+form(action='').-modal
+  button.__btn-close.btn.arcticmodal-close.icon.icon-close
+  .__header
+    h1.__title Напишите нам
+  .-row-form
+    input.-field(type='text' placeholder='Ваше имя')
+  .-row-form
+    input.-field(type='email' placeholder='Электронная почта')
+  .-row-form
+    input.-field(type='tel' placeholder='Телефон')
+  .-row-form
+    select.-select(data-linkcustomclass='field field_select')
+      option Выберите вид услуги
+      option Аренда стойки (collocation)
+      option Аренда юнита (collocation)
+      option Виртуальная машина OpenVZ (хостинг)
+      option Виртуальная машина KVM (хостинг)
+  .-row-form
+    textarea.-field._area(placeholder='Комментарий')
+  .__footer
+    button(type='submit').-btn._type_1 #[span.__label Оставить заявку]

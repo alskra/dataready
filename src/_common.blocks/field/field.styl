@@ -1,18 +1,19 @@
 .field
-  border 2px solid #cfd9e0
-  padding 0 15px
+  border 1px solid rgba(#89879a, 0.5)
+  border-width 0 0 1px
+  padding 0
   display inline-flex
   vertical-align top
   align-items center
-  background white
-  height 50px
+  background transparent
+  height 35px
   font-size 14px
-  text-transform uppercase
-  font-weight 300
+  //text-transform uppercase
+  font-weight 400
   color $text-color
   transition 0.15s
   &::placeholder
-    color lighten($text-color, 15)
+    color $text-color
     opacity 1
 
   &,
@@ -40,9 +41,9 @@
     border-color #c52e3c !important
 
   &_area
-    height 100px
-    padding-top 14px
-    padding-bottom 12px
+    height 60px
+    padding-top 5px
+    padding-bottom 5px
     resize vertical
   &_select
     position relative
@@ -53,19 +54,17 @@
       position absolute
       top 50%
       right 10px
-      width 8px
-      height 8px
-      margin -6px 0
-      border-top 1px solid $text-color
-      border-right 1px solid $text-color
-      transform rotate(135deg)
+      margin -2px 0
+      border-top 5px solid
+      border-left 5px solid transparent
+      border-right 5px solid transparent
     &.ik_select_link_opened
       &:before
-        margin -2px 0
-        transform rotate(-45deg)
+        transform rotate(-180deg)
     .ik_select_link_text
       overflow hidden
       white-space nowrap
+      text-overflow ellipsis
   &_collapsible
     height 50px
     &:focus

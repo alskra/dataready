@@ -13,6 +13,6 @@ function reInitPerfectScrollbar() {
 $(function () {
     reInitPerfectScrollbar();
     $('.ps-scroll').on('touchmove', function (e) {
-        e.stopPropagation();
+        //e.stopPropagation();
     });
 });

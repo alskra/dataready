@@ -22,7 +22,7 @@ include components/social
             .__col_2.menu-wrap
               +menu(menuList, ['#main'])
             .__col_3.hidden-xs
-              +a('popups/feedback').-btn._type_1(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+              +a('popups/feedback.html').-btn._type_1(data-toggle='modal-ajax') #[span.__label Оставить заявку]
             .__col_4.hidden-md.hidden-lg
               button.-toggle-menu(type='button')
                 span.__line
@@ -60,7 +60,7 @@ include components/social
         .-decoration._type_1
         .container-fluid
           .text-center.hidden-sm.hidden-md.hidden-lg
-            +a('popups/feedback').-btn._type_2(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            +a('popups/feedback.html').-btn._type_2(data-toggle='modal-ajax') #[span.__label Оставить заявку]
           .row.hidden-xs
             .col-sm-4
               +a().-link._type_1 Личный кабинет
@@ -70,7 +70,7 @@ include components/social
               +social
 
     // Services 1
-    section.-section._services_1(data-id='services')
+    section.-section._services_1(data-id='services-page-1')
       header.-header-section
         .container-fluid
           .-header-section.__row
@@ -113,12 +113,12 @@ include components/social
           .-footer-section.__row.row
             .__col.col-sm-4.hidden-xs
             .__col.col-xs-12.col-sm-4.text-center
-              +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+              +a('popups/feedback.html').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
             .__col.col-sm-4.text-right.hidden-xs
               +a().-link._type_1 Хостинг
 
     // Services 2
-    section.-section._services_2(data-id='services')
+    section.-section._services_2(data-id='services-page-2')
       .-decoration._type_4
       header.-header-section
         .container-fluid
@@ -173,10 +173,10 @@ include components/social
       footer.-footer-section
         .container-fluid
           .text-center
-            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            +a('popups/feedback.html').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
 
     // Services 3
-    section.-section._services_3(data-id='services')
+    section.-section._services_3(data-id='services-page-3')
       header.-header-section
         .container-fluid
           .-header-section.__row
@@ -205,10 +205,10 @@ include components/social
       footer.-footer-section
         .container-fluid
           .text-center
-            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            +a('popups/feedback.html').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
 
     // Services 4
-    section.-section._services_4(data-id='services')
+    section.-section._services_4(data-id='services-page-4')
       header.-header-section
         .container-fluid
           .-header-section.__row
@@ -237,7 +237,7 @@ include components/social
       footer.-footer-section
         .container-fluid
           .text-center
-            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            +a('popups/feedback.html').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
 
     // Gallery
     section.-section._gallery(data-id='gallery')
@@ -252,20 +252,122 @@ include components/social
                 span.__line
                 span.__line
       .-content-section
-        .-gallery-slider-2.slick-slider
-          .slick-slide
-            .container-fluid
-              .-main-slider.__col._1
-                .__header Раскройте весь потенциал
-                h2.__title.dot-ellipsis.dot-timer-update Virtual Machines
-                .__caption.dot-ellipsis.dot-timer-update.
-                  Создавайте виртуальные машины за считаные минуты.
-                  Выберите наши образы или образы, предоставляемые партнерами и сообществом.
-                +a.__more.btn.btn_type_3 #[span.__label Подробнее]
-              .-main-slider.__col._2
-                .__decoration
-                +img('files/pics/slide1.png', 'Virtual Machines').__img
+        .-gallery-slider-2.container-fluid
+          .slick-slider
+            .slick-slide
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+            .slick-slide
+              figure.-gallery-slider-2.__item
+                +img('files/pics/gallery/photo1.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+            .slick-slide
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo4.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo5.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+            .slick-slide
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
+              figure.-gallery-slider-2.__item._row
+                +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
+                figcaption.__overlay
+                  .__title DEPO Rack 600T3 12U
+                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                  .__icon-view.icon.icon-view
 
     // Contacts
     section.-section._contacts(data-id='contacts')
+      .-decoration._type_6.hidden-xs
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Контакты
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .__inner.container-fluid
+          form(action='').-form-feedback.hidden-xs
+            header.__header
+              h2.__title Напишите нам
+            .__content.ps-scroll
+              .-row-form
+                input.-field(type='text' placeholder='Ваше имя')
+              .-row-form
+                input.-field(type='email' placeholder='Электронная почта')
+              .-row-form
+                input.-field(type='tel' placeholder='Телефон')
+              .-row-form
+                select.-select(data-linkcustomclass='field field_select')
+                  option Выберите вид услуги
+                  option Аренда стойки (collocation)
+                  option Аренда юнита (collocation)
+                  option Виртуальная машина OpenVZ (хостинг)
+                  option Виртуальная машина KVM (хостинг)
+              .-row-form
+                textarea.-field._area(placeholder='Комментарий')
+              .-row-form._btn
+                button(type='submit').-btn._type_1 #[span.__label Оставить заявку]
+          section.-contacts-data
+              header.__header
+                p.__subtitle.hidden-xs Ответим на любые Ваши вопросы
+                h2.__title Нас легко найти
+              .__content.ps-scroll
+                p.__row._flex Адрес:
+                  span.-decoration._type_7
+                  +a('popups/map.html')(data-toggle='modal-ajax').-link._type_1 На карте
+                p.__row Россия, #[strong Москва]
+                p.__row Варшавское шоссе, дом 46, офис 408
+                .hidden-xs &nbsp
+                p.__row Телефон:
+                p.__row
+                  +a('tel:+74957555552').__tel +7 (495) #[strong 755 55 52]
+                p.__row
+                  +a('tel:+74956657312').__tel +7 (495) #[strong 665 73 12]
+              .__footer
+                .row
+                  .col-xs-6
+                    +aMail('support@govorit.ru')
+                  .col-xs-6.hidden-sm.hidden-md.hidden-lg
+                    +social
 
+      footer.-footer-section.hidden-xs
+        .container-fluid
+          .-footer-section.__row._1.row
+            .col-sm-3
+              +a(pages.index.url).-logo
+                +img('img/logo.svg', pkg.name).__img
+            .__copyright.col-sm-6
+              | Dataready © 2016  |  Создание сайтов#{' '}
+              +a('//magwai.ru')(target='blank') Магвай
+            .col-sm-3
+              +social

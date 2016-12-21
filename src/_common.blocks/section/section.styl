@@ -6,12 +6,14 @@
   justify-content space-between
   position relative
   &_main
-    background url('main-bg.jpg') no-repeat 50% 0/cover
+    background url('main-bg.jpg') no-repeat 50% 50%/cover
   &_services
     &_4
-      background url('circles.svg') no-repeat left 50% bottom -120px/contain
+      background url('circles.svg') no-repeat left 50% bottom -120px/346px auto
   &_gallery
     background $blue-1
+  &_contacts
+    background url('contacts-bg.jpg') no-repeat 50% 50%/cover
 
   @media (min-width $screen-sm-min)
     padding 50px 0
@@ -20,6 +22,9 @@
         padding-bottom 0
       .footer-section
         padding-top 0
+    &_services
+      &_4
+        background url('circles.svg') no-repeat left 50% bottom -100px/346px auto
 
   @media (min-width $screen-md-min)
     &_services

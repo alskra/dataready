@@ -19,7 +19,4 @@ $(function () {
 
         ]
     });
-    $('.main-slider').on('touchmove', function (e) {
-       $('.wrapper').trigger(e);
-    });
 });

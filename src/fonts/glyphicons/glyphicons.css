@@ -29,3 +29,7 @@
 .icon-mouse:before {
   content: "\E002";
 }
+
+.icon-view:before {
+  content: "\E003";
+}

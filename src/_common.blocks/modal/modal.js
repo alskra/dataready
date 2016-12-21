@@ -3,8 +3,8 @@ $(function () {
         closeOnOverlayClick: false,
         overlay: {
             css: {
-                backgroundColor: '#295786',
-                opacity: 1
+                backgroundColor: '#1d1c2a',
+                opacity: 0.96
             }
         },
         afterLoadingOnShow: function(data, el) {
