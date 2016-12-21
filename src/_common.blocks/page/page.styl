@@ -30,3 +30,20 @@
       margin 0
       small
         color inherit
+  &[data-page='main']
+    .link_to-top
+      transition visibility 0s 0.15s, opacity 0.15s
+      visibility hidden
+      opacity 0
+  &[data-page='gallery']
+    .onepage-pagination
+      @media (min-width $screen-sm-min)
+        li
+          a
+            background-color #1d1c2a
+            &.active
+              background-color transparent
+    .link_to-top
+      color #1d1c2a
+      .fa
+        color white

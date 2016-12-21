@@ -1,0 +1,107 @@
+.service-item
+  height 100%
+  display flex
+  flex-flow column
+  .ul-list
+    margin-bottom ($line-height-computed/2)
+    &:last-child
+      margin-bottom 0
+  &__col
+    &_1
+      flex 0 1 100%
+      display flex
+      justify-content center
+      align-items center
+    &_2
+      flex none
+      max-height 100%
+  &__img-wrap
+    flex none
+    max-width 100%
+    max-height 100%
+    padding 25px
+    position relative
+    &:before
+      content ''
+      position absolute
+      top 0
+      left -20%
+      right -20%
+      bottom -25%
+      background url('shadow.png') no-repeat 50% 100%/contain
+      pointer-events none
+      z-index -1
+    &_type
+      &_1
+        &:after
+          content ''
+          position absolute
+          top 50%
+          left 50%
+          width 120%
+          padding-top 120%
+          margin -60%
+          background url('circles.svg') no-repeat 50% 50%/contain
+          pointer-events none
+          z-index -1
+  &__img
+    display block
+    max-width 100%
+    max-height 100%
+    position relative
+    z-index 1
+  &__title
+    font-size 18px
+    margin 0 0 15px
+  &__caption
+    font-size 13px
+
+  @media (max-width $screen-xs-max - 1) and (orientation: landscape)
+    flex-flow row
+    &__col
+      &_1
+        flex 0 0 percentage(3/10)
+      &_2
+        flex 1 1 auto
+        margin auto 0 auto 10px
+    &__img-wrap
+      padding 0
+
+  @media (min-width $screen-sm-min)
+    flex-flow row
+    &__col
+      &_1
+        flex 0 0 percentage(4/10)
+        justify-content flex-start
+      &_2
+        flex 1 1 auto
+        margin auto 0 auto 30px
+    &__img-wrap
+      padding 0
+      &_type
+        &_1
+          &:after
+            width 180%
+            padding-top 180%
+            margin -90%
+    &__title
+      font-size 28px
+    &__caption
+      font-size $font-size-base
+    &_type
+      &_1
+        & {$p}__col
+            &_1
+              order 1
+              justify-content flex-end
+            &_2
+              margin auto 30px auto 0
+
+  @media (min-width $screen-md-min)
+    height calc(50% - 30px)
+    margin-bottom 30px
+    &__col
+      &_1
+        flex 0 0 percentage(4/10)
+    &__title
+      margin-bottom 20px

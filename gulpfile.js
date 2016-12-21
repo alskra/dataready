@@ -264,7 +264,7 @@ gulp.task('img', function() {
         rename(function (path) {
             path.base = path.dirname
         }),
-        newer('public/img'),
+        newer('public/img/'),
         imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],

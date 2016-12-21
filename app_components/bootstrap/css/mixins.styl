@@ -9,7 +9,7 @@ percentage($n)
     unit($n * 100, "%")
 
 url(str)
-  if (current-property && current-property[0] == 'background') || (current-property && current-property[0] == 'background-image')
+  if (current-property && current-property[0] == 'background') || (current-property && current-property[0] == 'background-image') || (current-property && current-property[0] == 'content')
     str = '../img/' + str
   unquote('url("' + str + '")')
 

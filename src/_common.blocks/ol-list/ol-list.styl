@@ -1,10 +1,10 @@
 .ol-list
-  position relative
   list-style none
-  padding-left 20px
+  padding 0
   counter-reset lvl1
   >li
-    margin 5px 0
+    position relative
+    padding-left 20px
     &:before
       counter-increment lvl1
       content counter(lvl1)'.'

@@ -1,9 +1,10 @@
 .ul-list
-  position relative
   list-style none
-  padding-left 20px
+  padding 0
+  line-height ($line-height-base)em
   >li
-    margin 5px 0
+    position relative
+    padding-left 20px
     &:before
       content '\2022'
       font-weight 400
@@ -15,3 +16,12 @@
       >li
         &:before
           content '\2014'
+    &_circle
+      color $blue-1
+      >li
+        &:before
+          content ''
+          border 4px solid
+          border-radius 50%
+          top ($line-height-base/2)em
+          margin -4px 0

@@ -9,8 +9,10 @@ include components/menu
 include components/social
 
 +doctype(pages.index.title)
+  +a().-link._to-top.hidden-xs Вверх#[span.fa.fa-long-arrow-right]
   .-wrapper
-    section.-section._main
+    // Main
+    section.-section._main(data-id='main')
       header.-header-section
         .container-fluid
           .-header-section.__row
@@ -26,8 +28,231 @@ include components/social
                 span.__line
                 span.__line
                 span.__line
+      .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 5000})
+        .slick-slide
+          .container-fluid
+            .-main-slider.__col._1
+              .__header Раскройте весь потенциал
+              h2.__title.dot-ellipsis.dot-timer-update Virtual Machines
+              .__caption.dot-ellipsis.dot-timer-update.
+                Создавайте виртуальные машины за считаные минуты.
+                Выберите наши образы или образы, предоставляемые партнерами и сообществом.
+              +a.__more.btn.btn_type_3 #[span.__label Подробнее]
+            .-main-slider.__col._2
+              .__decoration
+              +img('files/pics/slide1.png', 'Virtual Machines').__img
+        .slick-slide
+          .container-fluid
+            .-main-slider.__col._1
+              .__header Раскройте весь потенциал
+              h2.__title.dot-ellipsis.dot-timer-update Vigilsperegrinatione! Burguss tolerare!
+              .__caption.dot-ellipsis.dot-timer-update.
+                Sunt competitiones attrahendam emeritis, clemens sensoremes.
+                Festus, grandis detriuss callide perdere de barbatus, audax vita.
+                Sunt competitiones attrahendam emeritis, clemens sensoremes.
+                Festus, grandis detriuss callide perdere de barbatus, audax vita.
+              +a.__more.btn.btn_type_3 #[span.__label Подробнее]
+            .-main-slider.__col._2
+              .__decoration
+              +img('files/pics/slide2.png', 'Virtual Machines').__img
+
+      footer.-footer-section
+        .-decoration._type_1
+        .container-fluid
+          .text-center.hidden-sm.hidden-md.hidden-lg
+            +a('popups/feedback').-btn._type_2(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+          .row.hidden-xs
+            .col-sm-4
+              +a().-link._type_1 Личный кабинет
+            .col-sm-4.text-center
+              .icon.icon-mouse
+            .col-sm-4
+              +social
+
+    // Services 1
+    section.-section._services_1(data-id='services')
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Услуги и тарифы
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
       .-content-section
-        .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 5000})
+        .-services-list
+          .container-fluid
+            article.-service-item._type_1
+              .-decoration._type_2
+              .__col._1
+                .__img-wrap
+                  +img('files/pics/services/serv1.png', 'Аренда стойки (collocation)').__img
+              .__col._2.ps-scroll
+                h2.__title Аренда стойки (collocation)
+                .__caption
+                  .hidden-xs
+                    p Отдельная напольная телекоммуникационная стойка для размещения оборудования с выделенной мощностью до 8 кВА.
+                  ul.-ul-list._marker_circle
+                    li Аренда места для серверной стойки  —  20000 #[span.fa.fa-rub] / мес
+            article.-service-item.hidden-xs.hidden-sm
+              .__col._1
+                .__img-wrap._type_1
+                  +img('files/pics/services/serv2.png', 'Аренда юнита (collocation)').__img
+              .__col._2.ps-scroll
+                h2.__title Аренда юнита (collocation)
+                .__caption
+                  .hidden-xs
+                    p Аренда отдельного физического сервера — это высокая производительность проекта и полная изолированность от других клиентов.
+                  ul.-ul-list._marker_circle
+                    li Аренда юнита в  серверной стойке  —  2000 #[span.fa.fa-rub] / мес
+      footer.-footer-section
+        .-decoration._type_3
+        .container-fluid
+          .-footer-section.__row.row
+            .__col.col-sm-4.hidden-xs
+            .__col.col-xs-12.col-sm-4.text-center
+              +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+            .__col.col-sm-4.text-right.hidden-xs
+              +a().-link._type_1 Хостинг
+
+    // Services 2
+    section.-section._services_2(data-id='services')
+      .-decoration._type_4
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Услуги и тарифы
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .-services-list
+          .container-fluid
+            article.-service-item.hidden-md.hidden-lg
+              .__col._1
+                .__img-wrap._type_1
+                  +img('files/pics/services/serv2.png', 'Аренда юнита (collocation)').__img
+              .__col._2.ps-scroll
+                h2.__title Аренда юнита (collocation)
+                .__caption
+                  .hidden-xs
+                    p Аренда отдельного физического сервера — это высокая производительность проекта и полная изолированность от других клиентов.
+                  ul.-ul-list._marker_circle
+                    li Аренда юнита в  серверной стойке  —  2000 #[span.fa.fa-rub] / мес
+
+            article.-service-item._type_1.hidden-xs.hidden-sm
+              .-decoration._type_5
+              .__col._1
+                .__img-wrap
+                  +img('files/pics/services/serv3.png', 'Виртуальная машина OpenVZ (хостинг)').__img
+              .__col._2.ps-scroll
+                h2.__title Виртуальная машина OpenVZ (хостинг)
+                .__caption
+                  .hidden-xs
+                    p OpenVZ — реализация технологии виртуализации на уровне операционной системы, которая базируется на ядре Linux.
+                  ul.-ul-list._marker_circle
+                    li Intel Xeon E3-1230v5 3.4 ГГц / 32 ГБ DDR4 / 2 × 2 ТБ SATA  —  5000 #[span.fa.fa-rub]
+                    li Intel Xeon E3-1230v5 3.4 ГГц / 32 ГБ DDR4 / 2 × 2 ТБ SATA  —  5000 #[span.fa.fa-rub]
+            article.-service-item.hidden-xs.hidden-sm
+              .__col._1
+                .__img-wrap
+                  +img('files/pics/services/serv4.png', 'Виртуальная машина KVM (хостинг)').__img
+              .__col._2.ps-scroll
+                h2.__title Виртуальная машина KVM (хостинг)
+                .__caption
+                  .hidden-xs
+                    p Данный вид VDS подойдет как и владельцам сайтов, так и желающим разместить свой собственный игровой сервер, при наличии минимальных знаний клиент с легкостью
+                  ul.-ul-list._marker_circle
+                    li 2 × Intel Xeon E5-2630v3 2.4 ГГц / 128 ГБ DDR4 / 2 × 480 ГБ SSD  —  20000 #[span.fa.fa-rub]
+                    li 2 × Intel Xeon E5-2630v3 2.4 ГГц / 128 ГБ DDR4 / 2 × 480 ГБ SSD  —  20000 #[span.fa.fa-rub]
+      footer.-footer-section
+        .container-fluid
+          .text-center
+            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+
+    // Services 3
+    section.-section._services_3(data-id='services')
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Услуги и тарифы
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .-services-list
+          .container-fluid
+            article.-service-item._type_1.hidden-md.hidden-lg
+              .__col._1
+                .__img-wrap
+                  +img('files/pics/services/serv3.png', 'Виртуальная машина OpenVZ (хостинг)').__img
+              .__col._2.ps-scroll
+                h2.__title Виртуальная машина OpenVZ (хостинг)
+                .__caption
+                  .hidden-xs
+                    p OpenVZ — реализация технологии виртуализации на уровне операционной системы, которая базируется на ядре Linux.
+                  ul.-ul-list._marker_circle
+                    li Intel Xeon E3-1230v5 3.4 ГГц / 32 ГБ DDR4 / 2 × 2 ТБ SATA  —  5000 #[span.fa.fa-rub]
+                    li Intel Xeon E3-1230v5 3.4 ГГц / 32 ГБ DDR4 / 2 × 2 ТБ SATA  —  5000 #[span.fa.fa-rub]
+      footer.-footer-section
+        .container-fluid
+          .text-center
+            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+
+    // Services 4
+    section.-section._services_4(data-id='services')
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Услуги и тарифы
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .-services-list
+          .container-fluid
+            article.-service-item.hidden-md.hidden-lg
+              .__col._1
+                .__img-wrap
+                  +img('files/pics/services/serv4.png', 'Виртуальная машина KVM (хостинг)').__img
+              .__col._2.ps-scroll
+                h2.__title Виртуальная машина KVM (хостинг)
+                .__caption
+                  .hidden-xs
+                    p Данный вид VDS подойдет как и владельцам сайтов, так и желающим разместить свой собственный игровой сервер, при наличии минимальных знаний клиент с легкостью
+                  ul.-ul-list._marker_circle
+                    li 2 × Intel Xeon E5-2630v3 2.4 ГГц / 128 ГБ DDR4 / 2 × 480 ГБ SSD  —  20000 #[span.fa.fa-rub]
+                    li 2 × Intel Xeon E5-2630v3 2.4 ГГц / 128 ГБ DDR4 / 2 × 480 ГБ SSD  —  20000 #[span.fa.fa-rub]
+      footer.-footer-section
+        .container-fluid
+          .text-center
+            +a('popups/feedback').-btn._type_3(data-toggle='modal-ajax') #[span.__label Оставить заявку]
+
+    // Gallery
+    section.-section._gallery(data-id='gallery')
+      header.-header-section
+        .container-fluid
+          .-header-section.__row
+            .__col_1
+              h2.__title Фотогалерея
+            .__col_4.hidden-md.hidden-lg
+              button.-toggle-menu(type='button')
+                span.__line
+                span.__line
+                span.__line
+      .-content-section
+        .-gallery-slider-2.slick-slider
           .slick-slide
             .container-fluid
               .-main-slider.__col._1
@@ -40,36 +265,7 @@ include components/social
               .-main-slider.__col._2
                 .__decoration
                 +img('files/pics/slide1.png', 'Virtual Machines').__img
-          .slick-slide
-            .container-fluid
-              .-main-slider.__col._1
-                .__header Раскройте весь потенциал
-                h2.__title.dot-ellipsis.dot-timer-update Vigilsperegrinatione! Burguss tolerare!
-                .__caption.dot-ellipsis.dot-timer-update.
-                  Sunt competitiones attrahendam emeritis, clemens sensoremes.
-                  Festus, grandis detriuss callide perdere de barbatus, audax vita.
-                  Sunt competitiones attrahendam emeritis, clemens sensoremes.
-                  Festus, grandis detriuss callide perdere de barbatus, audax vita.
-                +a.__more.btn.btn_type_3 #[span.__label Подробнее]
-              .-main-slider.__col._2
-                .__decoration
-                +img('files/pics/slide2.png', 'Virtual Machines').__img
 
+    // Contacts
+    section.-section._contacts(data-id='contacts')
 
-      .-footer-section
-        .-decoration
-          .__line
-        .container-fluid
-          .text-center.hidden-sm.hidden-md.hidden-lg
-            +a('popups/feedback').-btn._type_2(data-toggle='modal-ajax') #[span.__label Оставить заявку]
-          .row.hidden-xs
-            .col-sm-4
-              +a().-link._type_1 Личный кабинет
-            .col-sm-4.text-center
-              .icon.icon-mouse
-            .col-sm-4
-              +social
-    section.-section._services_1
-    section.-section._services_2
-    section.-section._gallery
-    section.-section._contacts

@@ -1,10 +1,11 @@
 .footer-section
   flex none
-  padding 25px 0
+  padding 25px 0 30px
   margin-bottom -25px
   z-index 10
   line-height 1.25
   position relative
+  transform translate3d(0, 0, 0)
   p
     margin 0
     max-width none
@@ -19,6 +20,9 @@
     vertical-align top
     margin-top -58px
     pointer-events none
+  &__row
+    display flex
+    align-items center
 
   @media (min-width $screen-sm-min)
     padding 50px 0

@@ -1,0 +1,132 @@
+.decoration
+  &_type
+    &_1
+      position absolute
+      left 10px
+      top 100%
+      bottom 0
+      margin -44px -7px 0
+      display flex
+      flex-flow column
+      align-items center
+      pointer-events none
+      &:before
+        content ''
+        square 14px
+        border 3px solid white
+        border-radius 50%
+        flex none
+      &:after
+        content ''
+        flex 1 1 auto
+        border-left 1px solid rgba(#89879a, 0.4)
+    &_2
+      position absolute
+      left 10px
+      height 99999px
+      margin -99999px -7px 0
+      display flex
+      flex-flow column
+      align-items center
+      pointer-events none
+      &:after
+        content ''
+        square 14px
+        border 3px solid white
+        border-radius 50%
+      &:before
+        content ''
+        flex 1 1 auto
+        border-left 1px solid rgba(#89879a, 0.4)
+    &_3
+      position absolute
+      right 10px
+      top 100%
+      bottom 0
+      margin -44px -7px 0
+      display flex
+      flex-flow column
+      align-items center
+      pointer-events none
+      &:before
+        content ''
+        square 14px
+        border 3px solid white
+        border-radius 50%
+        flex none
+      &:after
+        content ''
+        flex 1 1 auto
+        border-left 1px solid rgba(#89879a, 0.4)
+    &_4
+      position absolute
+      top 0
+      right 10px
+      margin 0 -7px
+      height 100px
+      display flex
+      flex-flow column
+      align-items center
+      pointer-events none
+      &:after
+        content ''
+        square 14px
+        border 3px solid white
+        border-radius 50%
+        flex none
+      &:before
+        content ''
+        flex 1 1 auto
+        border-left 1px solid rgba(#89879a, 0.4)
+    &_5
+      position absolute
+      left 10px
+      width 99999px
+      height 14px
+      margin -14px -7px 0 (-99999px + 7px)
+      display flex
+      flex-flow row
+      align-items center
+      pointer-events none
+      &:after
+        content ''
+        square 14px
+        border 3px solid white
+        border-radius 50%
+      &:before
+        content ''
+        flex 1 1 auto
+        border-top 1px solid rgba(#89879a, 0.4)
+
+  @media (min-width $screen-sm-min)
+    &_type
+      &_1
+        left percentage(102/$screen-sm-min/2)
+        margin-top -64px
+      &_2
+        left percentage(102/$screen-sm-min/2)
+      &_3
+        right percentage(102/$screen-sm-min/2)
+        margin-top -76px
+      &_4
+        right percentage(102/$screen-sm-min/2)
+      &_5
+        left percentage(102/$screen-sm-min/2)
+
+  @media (min-width $screen-md-min)
+    &_type
+      &_1
+        left percentage(215/$screen-md-min)
+        margin-left -30px
+      &_2
+        left percentage(215/$screen-md-min)
+        margin-left -30px
+      &_3
+        right percentage(215/$screen-md-min)
+        margin-right -30px
+      &_4
+        right percentage(215/$screen-md-min)
+        margin-right -30px
+      &_5
+        left percentage(215/$screen-md-min)
+        margin-left (-99999px + 14px - 30px)
