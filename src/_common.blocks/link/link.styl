@@ -16,7 +16,7 @@
     text-transform uppercase
     text-decoration none !important
     position absolute
-    margin -0.5em -45px
+    margin -0.5em -42px
     transform rotate(-90deg)
     top 50%
     right percentage(102/$screen-sm-min/2)
@@ -35,5 +35,4 @@
 
   @media (min-width $screen-md-min)
     &_to-top
-      right percentage(215/$screen-md-min)
-      margin-right -65px
+      right calc((100vw - 1170px)/4)

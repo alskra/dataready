@@ -9,7 +9,7 @@ include components/menu
 include components/social
 
 +doctype(pages.index.title)
-  +a().-link._to-top.hidden-xs Вверх#[span.fa.fa-long-arrow-right]
+  +a('#main').-link._to-top.hidden-xs Вверх#[span.fa.fa-long-arrow-right]
   .-wrapper
     // Main
     section.-section._main(data-id='main')
@@ -28,13 +28,13 @@ include components/social
                 span.__line
                 span.__line
                 span.__line
-      .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 5000})
+      .-main-slider.slick-slider(data-slick={"autoplay": false, "autoplaySpeed": 5000})
         .slick-slide
           .container-fluid
             .-main-slider.__col._1
               .__header Раскройте весь потенциал
-              h2.__title.dot-ellipsis.dot-timer-update Virtual Machines
-              .__caption.dot-ellipsis.dot-timer-update.
+              h2.__title Virtual Machines
+              .__caption.
                 Создавайте виртуальные машины за считаные минуты.
                 Выберите наши образы или образы, предоставляемые партнерами и сообществом.
               +a.__more.btn.btn_type_3 #[span.__label Подробнее]
@@ -45,8 +45,8 @@ include components/social
           .container-fluid
             .-main-slider.__col._1
               .__header Раскройте весь потенциал
-              h2.__title.dot-ellipsis.dot-timer-update Vigilsperegrinatione! Burguss tolerare!
-              .__caption.dot-ellipsis.dot-timer-update.
+              h2.__title Vigilsperegrinatione! Burguss tolerare!
+              .__caption.
                 Sunt competitiones attrahendam emeritis, clemens sensoremes.
                 Festus, grandis detriuss callide perdere de barbatus, audax vita.
                 Sunt competitiones attrahendam emeritis, clemens sensoremes.
@@ -82,14 +82,14 @@ include components/social
                 span.__line
                 span.__line
       .-content-section
+        .-decoration._type_2
         .-services-list
           .container-fluid
             article.-service-item._type_1
-              .-decoration._type_2
               .__col._1
                 .__img-wrap
                   +img('files/pics/services/serv1.png', 'Аренда стойки (collocation)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Аренда стойки (collocation)
                 .__caption
                   .hidden-xs
@@ -100,7 +100,7 @@ include components/social
               .__col._1
                 .__img-wrap._type_1
                   +img('files/pics/services/serv2.png', 'Аренда юнита (collocation)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Аренда юнита (collocation)
                 .__caption
                   .hidden-xs
@@ -131,26 +131,25 @@ include components/social
                 span.__line
                 span.__line
       .-content-section
+        .-decoration._type_5.hidden-xs.hidden-sm
         .-services-list
           .container-fluid
             article.-service-item.hidden-md.hidden-lg
               .__col._1
                 .__img-wrap._type_1
                   +img('files/pics/services/serv2.png', 'Аренда юнита (collocation)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Аренда юнита (collocation)
                 .__caption
                   .hidden-xs
                     p Аренда отдельного физического сервера — это высокая производительность проекта и полная изолированность от других клиентов.
                   ul.-ul-list._marker_circle
                     li Аренда юнита в  серверной стойке  —  2000 #[span.fa.fa-rub] / мес
-
             article.-service-item._type_1.hidden-xs.hidden-sm
-              .-decoration._type_5
               .__col._1
                 .__img-wrap
                   +img('files/pics/services/serv3.png', 'Виртуальная машина OpenVZ (хостинг)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Виртуальная машина OpenVZ (хостинг)
                 .__caption
                   .hidden-xs
@@ -162,7 +161,7 @@ include components/social
               .__col._1
                 .__img-wrap
                   +img('files/pics/services/serv4.png', 'Виртуальная машина KVM (хостинг)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Виртуальная машина KVM (хостинг)
                 .__caption
                   .hidden-xs
@@ -194,7 +193,7 @@ include components/social
               .__col._1
                 .__img-wrap
                   +img('files/pics/services/serv3.png', 'Виртуальная машина OpenVZ (хостинг)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Виртуальная машина OpenVZ (хостинг)
                 .__caption
                   .hidden-xs
@@ -226,7 +225,7 @@ include components/social
               .__col._1
                 .__img-wrap
                   +img('files/pics/services/serv4.png', 'Виртуальная машина KVM (хостинг)').__img
-              .__col._2.ps-scroll
+              .__col._2
                 h2.__title Виртуальная машина KVM (хостинг)
                 .__caption
                   .hidden-xs
@@ -252,54 +251,55 @@ include components/social
                 span.__line
                 span.__line
       .-content-section
-        .-gallery-slider-2.container-fluid
-          .slick-slider
-            .slick-slide
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-            .slick-slide
-              figure.-gallery-slider-2.__item
-                +img('files/pics/gallery/photo1.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-            .slick-slide
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo4.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo5.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-            .slick-slide
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
-              figure.-gallery-slider-2.__item._row
-                +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
-                figcaption.__overlay
-                  .__title DEPO Rack 600T3 12U
-                  .__caption.dot-ellipsis.dot-timer-update Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
-                  .__icon-view.icon.icon-view
+        .-gallery-slider-2
+          .container-fluid
+            .slick-slider
+              .slick-slide
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo2.jpg')
+                  +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo3.jpg')
+                  +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+              .slick-slide
+                figure.-gallery-slider-2.__item(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo1.jpg')
+                  +img('files/pics/gallery/photo1.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+              .slick-slide
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo4.jpg')
+                  +img('files/pics/gallery/photo4.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo5.jpg')
+                  +img('files/pics/gallery/photo5.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+              .slick-slide
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo2.jpg')
+                  +img('files/pics/gallery/photo2.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
+                figure.-gallery-slider-2.__item._row(data-toggle='gallery' data-gallery='gallery-1' data-href='files/pics/gallery/photo3.jpg')
+                  +img('files/pics/gallery/photo3.jpg', 'Photo1', 'fit').__img
+                  figcaption.__overlay
+                    .__title DEPO Rack 600T3 12U
+                    .__caption Напольно-настенный серверный шкаф позволяет компактно разместить серверную ферму, систему хранения, ИБП
+                    .__icon-view.icon.icon-view
 
     // Contacts
     section.-section._contacts(data-id='contacts')
@@ -315,50 +315,51 @@ include components/social
                 span.__line
                 span.__line
       .-content-section
-        .__inner.container-fluid
-          form(action='').-form-feedback.hidden-xs
-            header.__header
-              h2.__title Напишите нам
-            .__content.ps-scroll
-              .-row-form
-                input.-field(type='text' placeholder='Ваше имя')
-              .-row-form
-                input.-field(type='email' placeholder='Электронная почта')
-              .-row-form
-                input.-field(type='tel' placeholder='Телефон')
-              .-row-form
-                select.-select(data-linkcustomclass='field field_select')
-                  option Выберите вид услуги
-                  option Аренда стойки (collocation)
-                  option Аренда юнита (collocation)
-                  option Виртуальная машина OpenVZ (хостинг)
-                  option Виртуальная машина KVM (хостинг)
-              .-row-form
-                textarea.-field._area(placeholder='Комментарий')
-              .-row-form._btn
-                button(type='submit').-btn._type_1 #[span.__label Оставить заявку]
-          section.-contacts-data
+        .-contacts
+          .container-fluid
+            form(action='').-form-feedback.hidden-xs
               header.__header
-                p.__subtitle.hidden-xs Ответим на любые Ваши вопросы
-                h2.__title Нас легко найти
+                h2.__title Напишите нам
               .__content.ps-scroll
-                p.__row._flex Адрес:
-                  span.-decoration._type_7
-                  +a('popups/map.html')(data-toggle='modal-ajax').-link._type_1 На карте
-                p.__row Россия, #[strong Москва]
-                p.__row Варшавское шоссе, дом 46, офис 408
-                .hidden-xs &nbsp
-                p.__row Телефон:
-                p.__row
-                  +a('tel:+74957555552').__tel +7 (495) #[strong 755 55 52]
-                p.__row
-                  +a('tel:+74956657312').__tel +7 (495) #[strong 665 73 12]
-              .__footer
-                .row
-                  .col-xs-6
-                    +aMail('support@govorit.ru')
-                  .col-xs-6.hidden-sm.hidden-md.hidden-lg
-                    +social
+                .-row-form
+                  input.-field(type='text' placeholder='Ваше имя')
+                .-row-form
+                  input.-field(type='email' placeholder='Электронная почта')
+                .-row-form
+                  input.-field(type='tel' placeholder='Телефон')
+                .-row-form
+                  select.-select(data-linkcustomclass='field field_select')
+                    option Выберите вид услуги
+                    option Аренда стойки (collocation)
+                    option Аренда юнита (collocation)
+                    option Виртуальная машина OpenVZ (хостинг)
+                    option Виртуальная машина KVM (хостинг)
+                .-row-form
+                  textarea.-field._area(placeholder='Комментарий')
+                .-row-form._btn
+                  button(type='submit').-btn._type_1 #[span.__label Оставить заявку]
+            section.-contacts-data
+                header.__header
+                  p.__subtitle.hidden-xs Ответим на любые Ваши вопросы
+                  h2.__title Нас легко найти
+                .__content.ps-scroll
+                  p.__row._flex Адрес:
+                    span.-decoration._type_7
+                    +a('popups/map.html')(data-toggle='modal-ajax').-link._type_1 На карте
+                  p.__row Россия, #[strong Москва]
+                  p.__row Варшавское шоссе, дом 46, офис 408
+                  .hidden-xs &nbsp
+                  p.__row Телефон:
+                  p.__row
+                    +a('tel:+74957555552').__tel +7 (495) #[strong 755 55 52]
+                  p.__row
+                    +a('tel:+74956657312').__tel +7 (495) #[strong 665 73 12]
+                .__footer
+                  .row
+                    .col-xs-6
+                      +aMail('support@govorit.ru')
+                    .col-xs-6.hidden-sm.hidden-md.hidden-lg
+                      +social
 
       footer.-footer-section.hidden-xs
         .container-fluid

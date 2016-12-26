@@ -200,7 +200,7 @@ gulp.task('css', function() {
         stylus({
             'include css': true,
             use: [autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 11'],
+                browsers: ['last 2 versions', 'ie >= 10'],
                 cascade: false
             })]
         }),

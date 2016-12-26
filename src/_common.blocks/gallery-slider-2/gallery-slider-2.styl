@@ -4,17 +4,19 @@
   left 0
   right 0
   bottom 0
-  padding 0
-  margin auto
-  &:before
-    content ''
-    position absolute
-    top 0
-    left -3.5%
-    right -3.5%
-    bottom 0
-    background url("gallery-bg.jpg") no-repeat 50% 0/100% auto
-    display block
+  .container-fluid
+    height 100%
+    padding 0
+    position relative
+    &:before
+      content ''
+      position absolute
+      top 0
+      left -3.5%
+      right -3.5%
+      bottom 0
+      background url("gallery-bg.jpg") no-repeat 50% 0/100% auto
+      display block
   .slick-slider
     position absolute
     top -30px
@@ -41,22 +43,22 @@
     position absolute
     font-size 20px
     line-height 1
-    bottom 34px
+    bottom 30px
     z-index 10
     color white
     transition 0.15s
     width 16px
-    height 3px
-    background white
+    height 21px
+    background linear-gradient(white, white) no-repeat 50% 50%/100% 3px
     transform translate3d(0, 0, 0)
     &:before, &:after
       content ''
       position absolute
       border-top 4px solid transparent
       border-bottom 4px solid transparent
-      top 1px
       height 9px
-      margin -4px 0
+      top 50%
+      margin -4.5px 0
     &:before
       border-right 6px solid
       left -6px
@@ -82,7 +84,10 @@
       width 100%
       height 100%
       background-color #282735
-      mix-blend-mode color
+      opacity 0.7
+      .backgroundblendmode &
+        opacity 1
+        mix-blend-mode color
     &:hover
       & {$p}__overlay
         transition visibility 0s, opacity 0.15s
@@ -99,7 +104,7 @@
     background-color rgba(#1d1c2a, 0.9)
     //box-shadow 0 7px 27.8px 1.2px rgba(0, 0, 0, 0.35)
     z-index 2
-    padding 20px
+    padding 15px
     text-align center
     display flex
     flex-flow column
@@ -120,20 +125,20 @@
     flex none
     color white
     font-size 18px
-    margin-bottom 25px
+    margin-bottom 15px
     width 100%
     overflow hidden
     white-space nowrap
     text-overflow ellipsis
   &__caption
-    flex 1 1 auto
+    //flex 1 1 auto
     color #cfcddd
     font-size 15px
     line-height ($line-height-base)em
     margin-bottom 15px
     width 100%
-    overflow hidden
     max-height 30%
+    overflow hidden
   &__icon-view
     flex none
     font-size 22px
@@ -143,19 +148,24 @@
     overflow hidden
 
   @media (min-width $screen-sm-min)
-    max-height 350px
+    display flex
+    flex-flow column
+    justify-content center
     bottom 50px
-    &:before
-      top -60px
-      left 0
-      right 0
-      bottom -40px
-      background url("gallery-bg.jpg") no-repeat 50% 0/auto 100%
+    .container-fluid
+      max-height 350px
+      &:before
+        top -60px
+        left 0
+        right 0
+        bottom -40px
+        background url("gallery-bg.jpg") no-repeat 50% 0/auto 100%
     .slick-slider
       margin 0
 
   @media (min-width $screen-md-min)
-    max-height 445px
-    &:before
-      top -90px
-      bottom -80px
+    .container-fluid
+      max-height 445px
+      &:before
+        top -90px
+        bottom -80px

@@ -19,22 +19,22 @@
     position absolute
     font-size 20px
     line-height 1
-    bottom 115px
+    bottom 110px
     z-index 10
     color white
     transition 0.15s
     width 16px
-    height 3px
-    background white
+    height 21px
+    background linear-gradient(white, white) no-repeat 50% 50%/100% 3px
     transform translate3d(0, 0, 0)
     &:before, &:after
       content ''
       position absolute
       border-top 4px solid transparent
       border-bottom 4px solid transparent
-      top 1px
       height 9px
-      margin -4px 0
+      top 50%
+      margin -4.5px 0
     &:before
       border-right 6px solid
       left -6px
@@ -47,9 +47,19 @@
     right 50%
   .slick-next
     left 50%
+  &__col
+    position relative
+    &_1
+      flex none
+      max-height 50%
+      overflow hidden
+      z-index 1
+    &_2
+      flex 0 1 100%
+      margin 0 0 25px
   &__header
     font-weight 600
-    padding 14px 22px 0 22px
+    padding 14px 20px 0 20px
     position relative
     color white
     margin-bottom 10px
@@ -68,22 +78,15 @@
     font-size 45px
     line-height 1.25em
     overflow hidden
-    max-height 2.5em
-    padding 0 22px
+    //max-height 2.5em
+    padding 0 20px
     margin 0 0 25px
   &__caption
     display none
     overflow hidden
     line-height ($line-height-base)em
-    max-height $line-height-base*3em
+    //max-height $line-height-base*3em
     font-weight 300
-  &__col
-    position relative
-    &_1
-      z-index 2
-    &_2
-      flex 1 1 auto
-      margin 0 0 25px
   &__img
     position absolute
     top 0
@@ -93,27 +96,15 @@
     margin auto
     max-width 100%
     max-height 100%
-    z-index 1
   &__decoration
     position absolute
-    width 124%
-    padding-top 124%
-    margin -62%
+    width 130%
+    padding-top 130%
+    margin -65%
     top 50%
     left 50%
     pointer-events none
-    &:before, &:after
-      content ''
-      position absolute
-      top 50%
-      left 50%
-      size 100% 100%
-      margin -50%
-      border 1px solid rgba(white, 0.1)
-      border-radius 50%
-    &:after
-      size 70% 70%
-      margin -35%
+    background inline-image('main-slider-circles.svg') no-repeat 50% 50%/contain
   &__more
     display none
 
@@ -123,8 +114,10 @@
     &__col
       flex none
       &_1
-        width 60%
-        margin auto 0
+        width calc(60% - 15px)
+        margin 0 15px 0 0
+        align-self center
+        max-height 100%
       &_2
         width calc(40% - 15px)
         margin 0 0 25px 15px
@@ -141,7 +134,9 @@
       flex none
       &_1
         width calc(60% - 15px)
-        margin auto 15px auto 0
+        margin 0 15px 0 0
+        align-self center
+        max-height 100%
       &_2
         width calc(40% - 15px)
         margin 0 0 0 15px
@@ -154,27 +149,23 @@
     &__title
       padding 0
       font-size 50px
-      max-height 1.25em
+      //max-height 1.25em
       margin-bottom 30px
     &__caption
       display block
       margin-bottom 40px
-      max-height $line-height-base*2em
+      //max-height $line-height-base*2em
     &__more
       display inline-flex
 
   @media (min-width $screen-md-min)
-    .slick-arrow
-      //bottom percentage(215/768)
     &__col
       width calc(50% - 15px)
     &__title
       font-size 60px
-      //margin-bottom 45px
     &__caption
       font-size 16px
-      //margin-bottom 55px
     &__decoration
-      width 100%
-      padding-top 100%
-      margin -50%
+      width 110%
+      padding-top 110%
+      margin -55%

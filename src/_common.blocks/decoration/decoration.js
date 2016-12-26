@@ -1,9 +1,9 @@
 function correctDec2() {
     var item = $('.decoration_type_2');
-    var title = item.closest('.service-item').find('.service-item__title');
-    var d = title.offset().top
-        - item.closest('.service-item').offset().top
-        + parseFloat(title.css('line-height'))/2 + 7;
+    var col = $('.service-item__col_2').eq(0);
+    var d = col.offset().top
+        - item.closest('.content-section').offset().top
+        + (Modernizr.mq('(min-width: ' + $screenSm + 'px)') ? 17 : 11) + 7;
     item.css('margin-top', -99999 + Math.abs(d));
     setTimeout(function () {
         correctDec2();
@@ -11,10 +11,10 @@ function correctDec2() {
 }
 function correctDec5() {
     var item = $('.decoration_type_5');
-    var title = item.closest('.service-item').find('.service-item__title');
-    var d = title.offset().top
-        - item.closest('.service-item').offset().top
-        + parseFloat(title.css('line-height'))/2 + 7;
+    var col = $('.service-item__col_2').eq(3);
+    var d = col.offset().top
+        - item.closest('.content-section').offset().top
+        + (Modernizr.mq('(min-width: ' + $screenSm + 'px)') ? 17 : 11) + 7;
     item.css('margin-top', -14 + Math.abs(d));
     setTimeout(function () {
         correctDec5();

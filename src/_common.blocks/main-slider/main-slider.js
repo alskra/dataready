@@ -19,4 +19,14 @@ $(function () {
 
         ]
     });
+
+    $(window).on('resize.mainSlider', function () {
+        $('.main-slider__col_1').each(function () {
+            var height = $(this).closest('.container-fluid').height();
+            $(this).trigger('destroy');
+            $(this).dotdotdot({
+                height: height
+            });
+        });
+    }).triggerHandler('resize.mainSlider');
 });

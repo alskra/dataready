@@ -14,7 +14,7 @@
     height 100%
     display flex
     flex-flow column
-    margin-left -7px
+    margin 0 -7px
     justify-content center
     li
       margin 5px 0
@@ -31,5 +31,4 @@
           border-color white
           background-color transparent
   @media (min-width $screen-md-min)
-    left percentage(215/$screen-md-min)
-    margin-left -30px
+    left calc((100vw - 1170px)/4)
