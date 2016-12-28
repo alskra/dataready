@@ -5,6 +5,9 @@
   "jquery": {
     "js": "./bower_components/jquery/dist/jquery.min.js"
   },
+  "jquery-touch-events": {
+    "js": "./bower_components/jquery-touch-events/src/jquery.mobile-events.min.js"
+  },
   "img-object-fit": {
     "css": "./app_components/img-object-fit/img-object-fit.styl",
     "js": "./app_components/img-object-fit/img-object-fit.js"
@@ -41,7 +44,7 @@
   },
   "jquery.onepage-scroll": {
     "css": "./app_components/jquery.onepage-scroll/onepage-scroll.css",
-    "js": "./app_components/jquery.onepage-scroll/jquery.onepage-scroll.min.js"
+    "js": "./app_components/jquery.onepage-scroll/jquery.onepage-scroll.js"
   },
   "bootstrap": {
     "css": "./app_components/bootstrap/css/index.styl",
@@ -62,6 +65,7 @@
   "js": [
     "modernizr",
     "jquery",
+    "jquery-touch-events",
     "bootstrap",
     "img-object-fit",
     "jquery.dotdotdot",

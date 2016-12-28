@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jquery": "^3.*",
+    "jquery-touch-events": "*",
     "slick-carousel": "*",
     "perfect-scrollbar": "*"
   }

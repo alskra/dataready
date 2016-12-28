@@ -1,17 +1,17 @@
 $(function () {
     if ($('.wrapper').length){
         var historyFlag = false;
-        function updatePage() {
+        function updatePage(hash) {
             historyFlag = true;
-            var sect = $('[data-id="' + window.location.hash.split('#')[1] + '"]');
-            if (window.location.hash == ''){
-                history.replaceState(null, null, '#main');
+            var sect = $('[data-id="' + hash.split('#')[1] + '"]');
+            if (hash == ''){
+                history.replaceState(null, document.title, '#main');
                 $('.wrapper').moveTo(1);
             }
             else if (sect.length){
                 if (Modernizr.mq('(min-width: ' + ($screenMd) + 'px)') && !sect.hasClass('section')){
                     sect = $('.section_services_2');
-                    history.replaceState(null, null, '#services-page-2');
+                    history.replaceState(null, document.title, '#services-page-2');
                 }
                 $('.wrapper').moveTo(sect.data('index'));
             }
@@ -31,10 +31,10 @@ $(function () {
                 animationTime: 500,             // AnimationTime let you define how long each section takes to animate
                 pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
                 updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-                beforeMove: function(index) {
+                beforeMove: function(index) {console.log(index);
                     if (!historyFlag){
                         historyFlag = true;
-                        history.pushState(null, null, '#' + $('.section').eq(index - 1).data('id'));
+                        history.pushState(null, document.title, '#' + $('.section').eq(index - 1).data('id'));
                     }
                     $('body').attr('data-page', $('.section').eq(index - 1).data('id'));
                 },  // This option accepts a callback function. The function will be called before the page moves.
@@ -48,10 +48,10 @@ $(function () {
                 // the browser's width is less than 600, the fallback will kick in.
                 direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
             });
-            updatePage();
+            updatePage(window.location.hash);
         }).on('popstate', function (e) {
             if (!historyFlag){
-                updatePage();
+                updatePage(window.location.hash);
             }
         }).triggerHandler('resize.onepage_scrollInit');
 
@@ -60,7 +60,14 @@ $(function () {
         });
 
         $('body').on('click', '.menu__btn', function (e) {
+            e.preventDefault();
+            $('.wrapper').moveTo($('[data-id="' + $(this).attr('href').split('#')[1] + '"]').data('index'));
             $('.menu').removeClass('menu_opened').fadeOut(500);
+        });
+
+        $('body').on('click', '.link_to-top', function (e) {
+            e.preventDefault();
+            $('.wrapper').moveTo(1);
         });
     }
 });

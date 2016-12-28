@@ -1,7 +1,12 @@
 $(function () {
     $('body').on('click', '[data-toggle="gallery"]', function(){
-        var galleryItems = $('[data-gallery="' + $(this).data('gallery') + '"]');
-        var initialSlide = galleryItems.index(this);
+        var galleryItems = [];
+        $('[data-gallery="' + $(this).data('gallery') + '"]').each(function () {
+            if (!($(this).closest('.slick-slide').hasClass('slick-cloned'))){
+                galleryItems.push($(this).data('href'));
+            }
+        });
+        var initialSlide = $(this).data('id');
         $.arcticmodal({
             type: 'ajax',
             url: 'popups/gallery.html',
@@ -11,8 +16,8 @@ $(function () {
                 dataType: 'html',
                 success: function(data, el, responce) {
                     var modal = $(responce);
-                    galleryItems.each(function () {
-                        $('<div class="gallery__item slick-slide"><img src="' + $(this).data('href') + '" alt class="img-object-fit scale-down" onload="objectFit(this)"></div>').appendTo(modal.find('.gallery'));
+                    galleryItems.forEach(function (href) {
+                        $('<div class="gallery__item slick-slide"><img data-lazy="' + href + '" alt class="img-object-fit scale-down" onload="objectFit(this)"></div>').appendTo(modal.find('.gallery'));
                     });
                     data.body.append(modal);
                 }

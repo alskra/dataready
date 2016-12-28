@@ -1,8 +1,11 @@
 $(function () {
+    $('.gallery-slider-2__item').each(function (i) {
+        $(this).data('id', i);
+    });
     $('.gallery-slider-2 .slick-slider').slick({
         dots: false,
         arrows: true,
-        infinite: false,
+        infinite: true,
         speed: 300,
         fade: false,
         cssEase: 'ease',
@@ -33,8 +36,7 @@ $(function () {
 
     $(window).on('resize.gallerySlider2', function () {
         $('.gallery-slider-2__caption').each(function () {
-            $(this).trigger('destroy');
-            $(this).dotdotdot();
+            $(this).trigger('destroy').dotdotdot();
         });
     }).triggerHandler('resize.gallerySlider2');
 });

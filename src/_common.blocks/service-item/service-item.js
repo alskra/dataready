@@ -1,9 +1,12 @@
-function correctImg() {
+function serviceItem() {
     $('.service-item__img').each(function () {
-        $(this).css('max-height', '').css('max-height', $(this).closest('.service-item__img-wrap').height());
+        $(this).css('max-height', $(this).closest('.service-item__col_1').height());
+    });
+    $('.service-item__col_2').each(function () {
+        $(this).trigger('destroy').dotdotdot();
     });
     setTimeout(function () {
-        correctImg();
+        serviceItem();
     }, 100);
 }
 $(function () {
@@ -12,11 +15,11 @@ $(function () {
             $(this).css('max-height', '').css('max-height', $(this).closest('.service-item__col_1').height());
         });
         $('.service-item__col_2').each(function () {
-            var height = $(this).closest('.service-item').height();
-            $(this).trigger('destroy');
-            $(this).dotdotdot({
-                height: height
-            });
+            $(this).trigger('destroy').dotdotdot();
         });
     }).triggerHandler('resize.serviceItem');
+
+    setTimeout(function () {
+        $(window).triggerHandler('resize.serviceItem');
+    }, 500);
 });
