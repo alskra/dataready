@@ -52,6 +52,7 @@
   &__title
     font-size 18px
     margin 0 0 15px
+    text-align center
   &__caption
     font-size 13px
 
@@ -74,6 +75,7 @@
 
   @media (min-width $screen-sm-min)
     flex-flow row
+    padding 15px 0
     &__col
       &_1
         width 40%
@@ -95,6 +97,7 @@
             margin -90%
     &__title
       font-size 28px
+      text-align left
     &__caption
       font-size $font-size-base
     &_type
@@ -107,8 +110,7 @@
               margin 0 30px 0 0
 
   @media (min-width $screen-md-min)
-    height calc(50% - 30px)
+    height 50%
     max-height 300px
-    margin-bottom 30px
     &__title
       margin-bottom 20px

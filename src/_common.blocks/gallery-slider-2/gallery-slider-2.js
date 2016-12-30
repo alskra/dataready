@@ -1,3 +1,6 @@
+if (document.documentElement.style.mixBlendMode !== undefined){
+    $('html').addClass('mixblendmode');
+}
 $(function () {
     $('.gallery-slider-2__item').each(function (i) {
         $(this).data('id', i);

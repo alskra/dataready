@@ -31,7 +31,7 @@ $(function () {
                 animationTime: 500,             // AnimationTime let you define how long each section takes to animate
                 pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
                 updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-                beforeMove: function(index) {console.log(index);
+                beforeMove: function(index) {
                     if (!historyFlag){
                         historyFlag = true;
                         history.pushState(null, document.title, '#' + $('.section').eq(index - 1).data('id'));
